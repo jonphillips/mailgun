@@ -163,7 +163,7 @@ defmodule Mailgun.Client do
   def log_email(conf, email) do
     json = email
     |> Enum.into(%{})
-    |> Poison.encode!
+    |> Jason.encode!
     File.write(conf[:test_file_path], json)
   end
 
